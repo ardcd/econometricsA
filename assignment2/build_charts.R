@@ -1,4 +1,4 @@
-build_charts <- function(dtm)
+build_charts = function(dtm)
 {  
  
   dtm1 = as.matrix(dtm)   # need it as a regular matrix for matrix ops like %*% to apply
