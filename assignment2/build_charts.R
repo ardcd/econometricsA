@@ -8,14 +8,17 @@ build_charts <- function(dtm)
   adj.mat = as.matrix(adj.mat[a0[1:50], a0[1:50]])   # taking the top 50 rows and cols only
   # windows()  # New plot window
   
-
-  source("build_barchart.R")
+require(ggplot2)
+  
+  source("https://raw.githubusercontent.com/ardcd/econometricsA/master/assignment2/build_barchart.R")
+   source("https://raw.githubusercontent.com/ardcd/econometricsA/master/assignment2/build_wordcloud.R")
+  # #build distill COG
+   source("https://raw.githubusercontent.com/ardcd/econometricsA/master/assignment2/distill.cog.R")
+  
   build_barchart(dtm)
   
-  source("distill.cog.R")
   distill.cog(adj.mat, 'Distilled COG - TF',  5,  5)
   
-  source("build_wordcloud.R")
   build_wordcloud(dtm,100,2,"word cloud")
    
 
